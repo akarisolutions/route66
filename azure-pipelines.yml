@@ -10,7 +10,7 @@ resources:
 
 variables:
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: '2a727e50-6275-45c0-a98e-6e8a57a103e3'
+  dockerRegistryServiceConnection: 'fdroute66acr'
   imageRepository: 'fdstatic'
   containerRegistry: 'fdroute66acr.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
