@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: route66 
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: route66 
+    spec:
+      containers:
+        - name: route66 
+          image: akatsreg.azurecr.io/route66
+          ports:
+          - containerPort: 80
