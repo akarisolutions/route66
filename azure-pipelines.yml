@@ -21,10 +21,6 @@ variables:
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
 
-- task: Npm@1
-  inputs:
-    command: 'install'
-
 stages:
 - stage: Build
   displayName: Build stage
@@ -34,6 +30,12 @@ stages:
     pool:
       vmImage: $(vmImageName)
     steps:
+    - task: Npm@1
+      inputs:
+        command: 'install'
+    - task: CmdLine@2
+      inputs:
+        script: 'gatsby build'
     - task: Docker@2
       displayName: Build and push an image to container registry
       inputs:
