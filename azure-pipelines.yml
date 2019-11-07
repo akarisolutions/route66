@@ -21,6 +21,10 @@ variables:
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
 
+- task: Npm@1
+  inputs:
+    command: 'install'
+
 stages:
 - stage: Build
   displayName: Build stage
